@@ -67,7 +67,6 @@ RUN_SENDER=false
 RUN_ALL=false
 RUN_MX=false
 RUN_CNAME=false
-WORDLIST=""
 
 ##### ARGUMENTS #####
 
@@ -82,7 +81,6 @@ while [[ $# -gt 0 ]]; do
                 -t|--transf) RUN_TRANSF=true ;;
                 -s|--sender) RUN_SENDER=true ;;
                 -a|--all) RUN_ALL=true ;;
-                -w|--wordlist) WORDLIST="$2"; shift ;;
                 -h|--help) printf "%b\n" "$show_manual"; exit 0 ;;
                 *)
                         if [[ "$1" != -* ]]; then
@@ -164,34 +162,6 @@ resolve_spf() {
         echo
 }
 
-##### WORDLIST #####
-
-bruteforce_and_resolve() {
-        printf "${CYAN}=====${RESET}${YELLOW}SUBDOMAIN ENUM${RESET}${CYAN}=====${RESET}\n"
-
-        while read -r sub; do
-
-                full_domain="${sub}.${domain}"
-
-                if host "$full_domain" > /dev/null 2>&1; then
-		printf "\n${GREEN}FOUND:${RESET} ${WHITE}%s${RESET}\n" "$full_domain"
-
-                        printf "%b\n" "$bar"
-
-                        resolve_ipv4 "$full_domain"
-                        resolve_ipv6 "$full_domain"
-			resolve_cname "$full_domain"
-                        resolve_ns "$full_domain"
-                        resolve_mx "$full_domain"
-                        resolve_spf "$full_domain"
-
-                        printf "%b\n" "$bar"
-                fi
-
-        done < "$WORDLIST"
-
-}
-
 ##### ORIGINAL MODES #####
 
 run_default() { printf "%b\n\n" "$dns_sweeper"; resolve_ipv4 "$domain"; resolve_ipv6 "$domain"; printf "%b\n" "$bar"; }
@@ -212,6 +182,3 @@ run_cname() { printf "%b\n\n" "$dns_sweeper"; resolve_cname "$domain"; printf "%
 [ "$RUN_SENDER" = true ] && run_sender
 [ "$RUN_CNAME" = true ] && run_cname
 
-if [[ -n "$WORDLIST" ]]; then
-        bruteforce_and_resolve
-fi
