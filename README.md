@@ -80,7 +80,11 @@ Tools/
 │   └── README.md
 │
 ├── Directory_Finder/
-│   ├── directory_finder.py
+│   ├── dirfinder.py
+│   └── README.md
+│
+├── PortScanner/
+│   ├── portscan.py 
 │   └── README.md
 │
 └── README.md
@@ -103,11 +107,16 @@ Acesse a ferramenta desejada:
 ```bash
 cd DNS_Sweeper
 ```
-
-ou
+,
 
 ```bash
 cd Directory_Finder
+```
+
+ou 
+
+```bash
+cd PortScanner
 ```
 
 Consulte o README específico de cada ferramenta para instruções detalhadas de instalação e uso.
@@ -147,8 +156,8 @@ Estudante e entusiasta de Segurança da Informação com foco em:
 * Bash
 * Redes
 
-GitHub:
-https://github.com/Douglas-fCruz
+🔗 Linkedin: linkedin.com/in/douglas-cruz-a80123275/
+
 
 ---
 

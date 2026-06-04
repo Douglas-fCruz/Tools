@@ -124,9 +124,11 @@ The author is not responsible for misuse.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Autor
 
 **Douglas Cruz**
+
+🔗 Linkedin: linkedin.com/in/douglas-cruz-a80123275/
 
 ---
 

@@ -58,7 +58,7 @@ pip install requests
 ```bash
 git clone https://github.com/SEU-USUARIO/Directory-Finder.git
 
-cd Directory-Finder
+cd Directory_Finder
 
 pip install requests
 ```
@@ -70,7 +70,7 @@ pip install requests
 ### Execução básica
 
 ```bash
-python directory_finder.py exemplo.com wordlist.txt
+python dirfinder.py exemplo.com wordlist.txt
 ```
 
 ---
@@ -85,7 +85,7 @@ python directory_finder.py exemplo.com wordlist.txt
 ### Exemplo
 
 ```bash
-python directory_finder.py alvo.com common.txt
+python dirfinder.py alvo.com common.txt
 ```
 
 ---
@@ -122,10 +122,9 @@ https://alvo.com/backup
 ## 📁 Estrutura do Projeto
 
 ```text
-directory-finder/
-├── directory_finder.py
+Directory-Finder/
+├── dirfinder.py
 ├── README.md
-└── wordlists/
 ```
 
 ---
@@ -142,7 +141,7 @@ O uso indevido contra sistemas sem autorização pode violar leis locais e inter
 
 **Douglas Cruz**
 
-🔗 GitHub: https://github.com/Douglas-fCruz
+🔗 Linkedin: linkedin.com/in/douglas-cruz-a80123275/
 
 ---
 
